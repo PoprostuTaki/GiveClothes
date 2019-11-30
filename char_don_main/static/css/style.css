@@ -587,6 +587,9 @@ form .form-group--checkbox {
   font-size: 1.8rem;
 }
 
+form .form-group--hidden {
+  display: none;
+}
 /* line 53, scss/modules/_forms.scss */
 form .form-group--checkbox label {
   display: -webkit-box;
@@ -1089,7 +1092,7 @@ header nav ul {
 header nav ul.nav--actions {
   font-size: 1.4rem;
   color: #737373;
-  margin: 30px 0 8px;
+  margin: 30px 0 50px;
 }
 
 /* line 21, scss/modules/_navigation.scss */
@@ -1132,6 +1135,11 @@ header nav ul.nav--actions .logged-user ul {
 header nav ul.nav--actions .logged-user ul li {
   border-left: 1px solid #3c3c3c;
   border-right: 1px solid #3c3c3c;
+}
+
+header nav ul.nav--actions .logged-user ul li:hover {
+  background-color: #fafafa;
+
 }
 
 /* line 53, scss/modules/_navigation.scss */

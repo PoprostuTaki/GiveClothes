@@ -9,32 +9,30 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
 <body>
-    {% if user.is_authenticated %}
-        <header class="header--form-page">
-            <nav class="container container--70">
-                <ul class="nav--actions">
-                    <li class="logged-user">
-                    {{ auth.user.name }}
-                        <ul class="dropdown">
-                            <li><a href="#">Profil</a></li>
-                            <li><a href="#">Ustawienia</a></li>
-                            <li><a href="#">Wyloguj</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                {% include 'nav.html' %}
-            </nav>
 
-    {% else %}
-        <header class="header--form-page">
-            <nav class="container container--70">
-                <ul class="nav--actions">
-                    <li><a href="{% url 'login' %}" class="btn btn--small btn--without-border">Zaloguj</a></li>
-                    <li><a href="{% url 'register' %}" class="btn btn--small btn--highlighted">Załóż konto</a></li>
-                </ul>
+    <header>
+        <nav class="container container--70">
+        {% if user.is_authenticated %}
+            <ul class="nav--actions">
+                <li class="logged-user">
+                Witaj {{ user.get_username }}
+                    <ul class="dropdown">
+                        <li><a href="">Profil</a></li>
+                        <li><a href="">Ustawienia</a></li>
+                        <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+                    </ul>
+                </li>
+            </ul>
             {% include 'nav.html' %}
-            </nav>
-    {% endif %}
+        {% else %}
+            <ul class="nav--actions">
+                <li><a href="{% url 'custom_login' %}" class="btn btn--small btn--without-border">Zaloguj</a></li>
+                <li><a href="{% url 'register' %}" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            </ul>
+            {% include 'nav.html' %}
+        {% endif %}
+        </nav>
+    </header>
 
     {% block container %} {% endblock %}
 <script src="{% static 'js/app.js' %}"></script>
