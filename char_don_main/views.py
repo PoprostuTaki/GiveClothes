@@ -20,16 +20,18 @@ class LandingPageView(View):
         institution_count = Donation.objects.aggregate(institution_count=Count('institution', distinct=True))
         quantity = Donation.objects.aggregate(quantity_sum=Sum('quantity'))
         # paginacja:
-        type_fun_list = Institution.objects.filter(type='FUN')
-        type_org_list = Institution.objects.filter(type='ORG')
-        type_lok_list = Institution.objects.filter(type='LOK')
-        paginator1 = Paginator(type_fun_list, 5)  # Show 5 contacts per page
-        paginator2 = Paginator(type_org_list, 5)  # Show 5 contacts per page
-        paginator3 = Paginator(type_lok_list, 5)  # Show 5 contacts per page
-        page = request.GET.get('page')
-        type_fun = paginator1.get_page(page)
-        type_org = paginator2.get_page(page)
-        type_lok = paginator3.get_page(page)
+        type_fun_list = Institution.objects.filter(type='FUN').order_by('id')
+        type_org_list = Institution.objects.filter(type='ORG').order_by('id')
+        type_lok_list = Institution.objects.filter(type='LOK').order_by('id')
+        paginator1 = Paginator(type_fun_list, 2)  # Show 5 contacts per page
+        paginator2 = Paginator(type_org_list, 2)  # Show 5 contacts per page
+        paginator3 = Paginator(type_lok_list, 2)  # Show 5 contacts per page
+        page_fun = request.GET.get('page_fun')
+        page_org = request.GET.get('page_org')
+        page_lok = request.GET.get('page_lok')
+        type_fun = paginator1.get_page(page_fun)
+        type_org = paginator2.get_page(page_org)
+        type_lok = paginator3.get_page(page_lok)
         return render(request, 'index.html', {'institution_count': institution_count['institution_count'],
                                               'quantity': quantity['quantity_sum'],
                                               'type_fun': type_fun, 'type_org': type_org, 'type_lok': type_lok})

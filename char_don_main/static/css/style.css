@@ -587,9 +587,18 @@ form .form-group--checkbox {
   font-size: 1.8rem;
 }
 
-form .form-group--hidden {
+form .category-hidden {
   display: none;
 }
+
+form .form-showed {
+ display: block;
+}
+
+form .form-hidden {
+  display: none;
+}
+
 /* line 53, scss/modules/_forms.scss */
 form .form-group--checkbox label {
   display: -webkit-box;

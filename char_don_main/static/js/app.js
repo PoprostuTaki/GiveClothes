@@ -2,6 +2,49 @@ document.addEventListener("DOMContentLoaded", function() {
   /**
    * HomePage - Help section
    */
+
+ // let checkboxOptions = document.getElementsByClassName('checkbox-options');
+ // let radioCategories = document.getElementsByClassName('radio-options');
+ // let toHideClass = document.getElementsByClassName('form-showed');
+ // for (let i = 0; i < checkboxOptions.length; i++) {
+ //   checkboxOptions[i].addEventListener('click', function() {
+ //     if (checkboxOptions[i].checked === true) {
+ //       for (let i = 0; i < radioCategories.length; i++) {
+ //        radioCategories[i].style.display = 'none';
+ //        if (radioCategories[i].firstElementChild.classList.value === checkboxOptions[i].value) {
+ //          toHideClass[i].style.display = 'block';
+ //        }
+ //      }}
+ //     }
+ //   )}
+
+let checkboxOptions = document.getElementsByClassName('checkbox-options');
+for (let i = 0; i < checkboxOptions.length; i++) {
+  checkboxOptions[i].addEventListener('click', function() {
+    if (checkboxOptions[i].checked === true) {
+  console.log(checkboxOptions[i].value)}
+  })
+}
+
+let radioCategories = document.getElementsByClassName('radio-options');
+for (let i = 0; i < radioCategories.length; i++) {
+  console.log(radioCategories[i].firstElementChild.classList.value)
+}
+
+let toHideClass = document.getElementsByClassName('form-showed');
+for (let i = 0; i < toHideClass.length; i++) {
+  toHideClass[i].style.display = 'none'
+}
+
+//onClick
+
+
+
+
+
+
+
+
   class Help {
     constructor($el) {
       this.$el = $el;

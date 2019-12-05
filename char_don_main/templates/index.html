@@ -101,21 +101,19 @@
         </ul>
 
         <div class="pagination help--slides-pagination">
-            <span class="step-links">
+
                 {% if type_fun.has_previous %}
-                    <a href="{% url 'landing_page' %}?page=1#help">&laquo; first</a>
-                    <a href="{% url 'landing_page' %}?page={{ type_fun.previous_page_number }}#help">previous</a>
+                    <a href="{% url 'landing_page' %}?page_fun=1#help" class="btn btn--small btn--without-border">&laquo; Pierwsza</a>
+                    <a href="{% url 'landing_page' %}?page_fun={{ type_fun.previous_page_number }}#help" class="btn btn--small btn--without-border">Poprzednia</a>
                 {% endif %}
 
-                <span class="current btn btn--small btn--without-border active">
-                    Strona {{ type_fun.number }} / {{ type_fun.paginator.num_pages }}
-                </span>
+                     <div class="btn btn--small btn--without-border active">Strona {{ type_fun.number }} z {{ type_fun.paginator.num_pages }}</div>
 
                 {% if type_fun.has_next %}
-                    <a href="{% url 'landing_page' %}?page={{ type_fun.next_page_number }}#help">next</a>
-                    <a href="{% url 'landing_page' %}?page={{ type_fun.paginator.num_pages }}#help">last &raquo;</a>
+                    <a href="{% url 'landing_page' %}?page_fun={{ type_fun.next_page_number }}#help" class="btn btn--small btn--without-border">Następna</a>
+                    <a href="{% url 'landing_page' %}?page_fun={{ type_fun.paginator.num_pages }}#help" class="btn btn--small btn--without-border">Ostatnia &raquo;</a>
                 {% endif %}
-            </span>
+
         </div>
     </div>
 
@@ -142,21 +140,19 @@
         </ul>
 
         <div class="pagination help--slides-pagination">
-            <span class="step-links">
+
                 {% if type_org.has_previous %}
-                    <a href="{% url 'landing_page' %}?page=1#help">&laquo; first</a>
-                    <a href="{% url 'landing_page' %}?page={{ type_org.previous_page_number }}#help">previous</a>
+                    <a href="{% url 'landing_page' %}?page_org=1#help" class="btn btn--small btn--without-border">&laquo; Pierwsza</a></li>
+                    <a href="{% url 'landing_page' %}?page_org={{ type_org.previous_page_number }}#help" class="btn btn--small btn--without-border">Poprzednia</a></li>
                 {% endif %}
 
-                <span class="current btn btn--small btn--without-border active">
-                    Strona {{ type_org.number }} / {{ type_org.paginator.num_pages }}
-                </span>
+            <div class="btn btn--small btn--without-border">Strona {{ type_org.number }} z {{ type_org.paginator.num_pages }}</div></li>
 
                 {% if type_org.has_next %}
-                    <a href="{% url 'landing_page' %}?page={{ type_org.next_page_number }}#help">next</a>
-                    <a href="{% url 'landing_page' %}?page={{ type_org.paginator.num_pages }}#help">last &raquo;</a>
+                   <a href="{% url 'landing_page' %}?page_org={{ type_org.next_page_number }}#help" class="btn btn--small btn--without-border">Następna</a></li>
+                    <a href="{% url 'landing_page' %}?page_org={{ type_org.paginator.num_pages }}#help" class="btn btn--small btn--without-border">Ostatnia &raquo;</a></li>
                 {% endif %}
-            </span>
+
         </div>
     </div>
 
@@ -183,21 +179,19 @@
             </ul>
 
         <div class="pagination help--slides-pagination">
-            <span class="step-links">
+
                 {% if type_lok.has_previous %}
-                    <a href="{% url 'landing_page' %}?page=1#help">&laquo; Pierwsza</a>
-                    <a href="{% url 'landing_page' %}?page={{ type_lok.previous_page_number }}#help">Poprzednia</a>
+                    <li class="btn btn--small btn--without-border"><a href="{% url 'landing_page' %}?page_lok=1#help">&laquo; Pierwsza</a></li>
+                    <li class="btn btn--small btn--without-border"><a href="{% url 'landing_page' %}?page_lok={{ type_lok.previous_page_number }}#help">Poprzednia</a></li>
                 {% endif %}
 
-                <span class="current btn btn--small btn--without-border active">
-                    Strona {{ type_lok.number }} / {{ type_lok.paginator.num_pages }}
-                </span>
+                     <li class="btn btn--small btn--without-border active">Strona {{ type_lok.number }} z {{ type_lok.paginator.num_pages }}</li>
 
                 {% if type_lok.has_next %}
-                    <a href="{% url 'landing_page' %}?page={{ type_lok.next_page_number }}#help">Następna</a>
-                    <a href="{% url 'landing_page' %}?page={{ type_lok.paginator.num_pages }}#help">Ostatnia &raquo;</a>
+                    <li class="btn btn--small btn--without-border"><a href="{% url 'landing_page' %}?page_lok={{ type_lok.next_page_number }}#help">Następna</a></li>
+                    <li class="btn btn--small btn--without-border"><a href="{% url 'landing_page' %}?page_lok={{ type_lok.paginator.num_pages }}#help">Ostatnia &raquo;</a></li>
                 {% endif %}
-            </span>
+
         </div>
     </div>
 </section>
